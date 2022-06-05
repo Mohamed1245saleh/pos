@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    protected $guarded = [];
+    protected $fillable = ['created_at' , 'total_price'];
 
     public function client()
     {
