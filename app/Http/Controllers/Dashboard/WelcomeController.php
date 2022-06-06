@@ -24,7 +24,7 @@ class WelcomeController extends Controller
             DB::raw('EXTRACT(Year FROM created_at) as year'),
             DB::raw('EXTRACT(Month FROM created_at) as month'),
             DB::raw('SUM(total_price) as sum')
-        )->groupBy('month')->get();
+        )->groupBy('month')->groupBy('Year')->get();
 
         return view('dashboard.welcome', compact('categories_count', 'products_count', 'clients_count', 'users_count', 'sales_data'));
 
